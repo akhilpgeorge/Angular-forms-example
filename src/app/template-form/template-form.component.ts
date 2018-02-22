@@ -9,6 +9,7 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 export class TemplateFormComponent implements OnInit, OnChanges {
   langs: string[] = ['english', 'malayalam', 'hindi'];
   email: string;
+  model: Signup = new Signup();
   constructor() {}
 
   ngOnInit() {}
@@ -16,4 +17,14 @@ export class TemplateFormComponent implements OnInit, OnChanges {
     console.log(this.email);
     console.log('OnChanges');
   }
+}
+
+class Signup {
+  constructor(
+    public firstName: string = '',
+    public lastName: string = '',
+    public email: string = '',
+    public password: string = '',
+    public language: string = ''
+  ) {}
 }
